@@ -19,3 +19,10 @@ sqa_criteria:
          commands:
            - mvn -f /saps-common-repo/pom.xml -B -DskipTests clean package
            - mvn -f /saps-common-repo/pom.xml test
+   qc_doc:
+     repos:
+       saps-common:
+         container: common-docs
+         commands:
+           - pip install recommonmark
+           - make html -C /saps-common-repo/docs/
