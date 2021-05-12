@@ -313,4 +313,14 @@
 		</dependency>
 
 	</dependencies>
+	<reporting>
+		<plugins>
+			<plugin>
+				<!--Full name: com.github.spotbugs:spotbugs-maven-plugin:4.2.3:spotbugs -->
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>4.2.3</version>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>
