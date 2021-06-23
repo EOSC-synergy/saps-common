@@ -1,9 +1,17 @@
 # .sqa/config.yml - jenkins-pipeline-library configuration file
 config:
-  project_repos:
+  credentials:
+  - id: synergy_dockerhub_bot_pass
+    password_var: JPL_DOCKERPASS
+    username_var: JPL_DOCKERUSER
+
+  project_repos: 
     saps-common:
       repo: 'https://github.com/EOSC-synergy/saps-common'
       branch: develop
+
+environment:
+  JPL_DOCKERPUSH: common
 
 sqa_criteria:
    qc_style:
@@ -12,6 +20,8 @@ sqa_criteria:
          container: common-testing
          commands:
            - mvn -f /saps-common-repo/pom.xml spotless:check
+         container: common
+
    qc_coverage:
      repos:
        saps-common:
@@ -19,6 +29,7 @@ sqa_criteria:
          commands:
            - mvn -f /saps-common-repo/pom.xml -B -DskipTests clean package
            - mvn -f /saps-common-repo/pom.xml test
+
    qc_doc:
      repos:
        saps-common:
@@ -26,6 +37,7 @@ sqa_criteria:
          commands:
            - pip install recommonmark
            - make html -C /saps-common-repo/docs/
+
    qc_security:
      repos:
        saps-scheduler:
