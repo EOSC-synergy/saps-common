@@ -31,7 +31,7 @@ sqa_criteria:
 
    qc_security:
      repos:
-       saps-scheduler:
+       saps-common:
          container: common-testing
          commands:
            - mvn -f /saps-common-repo/pom.xml -B -DskipTests clean package com.github.spotbugs:spotbugs-maven-plugin:check
