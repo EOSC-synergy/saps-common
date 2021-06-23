@@ -11,7 +11,7 @@ config:
       branch: develop
 
 environment:
-  JPL_DOCKERPUSH: common-testing
+  JPL_DOCKERPUSH: common-build
 
 sqa_criteria:
    qc_style:
@@ -20,7 +20,6 @@ sqa_criteria:
          container: common-testing
          commands:
            - mvn -f /saps-common-repo/pom.xml spotless:check
-         container: common-testing
 
    qc_coverage:
      repos:
