@@ -1,23 +1,15 @@
 # .sqa/config.yml - jenkins-pipeline-library configuration file
 config:
-  credentials:
-  - id: synergy_dockerhub_bot_pass
-    password_var: JPL_DOCKERPASS
-    username_var: JPL_DOCKERUSER
-
   project_repos: 
     saps-common:
       repo: 'https://github.com/EOSC-synergy/saps-common'
       branch: develop
 
-environment:
-  JPL_DOCKERPUSH: common-build
-
 sqa_criteria:
    qc_style:
      repos:
        saps-common:
-         container: common-build
+         container: common-testing
          commands:
            - mvn -f /saps-common-repo/pom.xml spotless:check
 
