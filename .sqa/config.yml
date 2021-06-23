@@ -17,7 +17,7 @@ sqa_criteria:
    qc_style:
      repos:
        saps-common:
-         container: common-testing
+         container: common-build
          commands:
            - mvn -f /saps-common-repo/pom.xml spotless:check
 
