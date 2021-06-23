@@ -1,19 +1,6 @@
 version: "3.6"
 
 services:
-  common-build:
-    build:
-      args: {}
-      context: .
-      dockerfile: './saps-common/docker/Dockerfile '
-    command: sleep 6000000
-    image: eoscsynergyapps/saps-common
-    volumes:
-    - source: ./
-      target: /sqaaas-build
-      type: bind
-    working_dir: /sqaaas-build
-
   common-testing:
     image: "maven:3-alpine"
     container_name: common-testing
