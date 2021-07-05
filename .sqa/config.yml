@@ -34,5 +34,5 @@ sqa_criteria:
        saps-common:
          container: common-testing
          commands:
-           - mvn -f /saps-common-repo/pom.xml -B -DskipTests clean package com.github.spotbugs:spotbugs-maven-plugin:check
+           - mvn -f /saps-common-repo/pom.xml -fn -B -DskipTests clean package com.github.spotbugs:spotbugs-maven-plugin:check
 
