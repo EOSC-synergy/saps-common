@@ -4,7 +4,10 @@ config:
   - id: synergy_dockerhub_bot_pass
     password_var: JPL_DOCKERPASS
     username_var: JPL_DOCKERUSER
-  project_repos: {}
+  project_repos:
+    saps-common:
+      repo: 'https://github.com/EOSC-synergy/saps-common'
+      branch: develop
 environment:
   JPL_DOCKERPUSH: saps-common-build
 sqa_criteria:
