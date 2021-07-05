@@ -16,19 +16,19 @@ services:
     command: sleep 6000000
     image: sphinxdoc/sphinx
     volumes:
-    - source: ./
-      target: /sqaaas-build
+    - source: ./saps-common
+      target: /saps-common-repo
       type: bind
-    working_dir: /sqaaas-build
+    working_dir: /saps-common-repo
 
   saps-common-testing:
     command: sleep 6000000
     image: maven:3-alpine
     volumes:
-    - source: ./
-      target: /sqaaas-build
+    - source: ./saps-common
+      target: /saps-common-repo
       type: bind
-    working_dir: /sqaaas-build
+    working_dir: /saps-common-repo
 
 version: '3.7'
 
