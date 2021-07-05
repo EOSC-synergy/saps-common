@@ -13,7 +13,7 @@ environment:
 sqa_criteria:
   qc_doc:
     repos:
-      this_repo:
+      saps-common:
         commands:
         - pip install recommonmark
         - make html -C docs/
@@ -21,21 +21,21 @@ sqa_criteria:
 
   qc_security:
     repos:
-      this_repo:
+      saps-common:
         commands:
         - mvn -f pom.xml -fn -B -DskipTests clean package com.github.spotbugs:spotbugs-maven-plugin:check
         container: saps-common-testing
 
   qc_style:
     repos:
-      this_repo:
+      saps-common:
         commands:
         - mvn -f pom.xml spotless:check
         container: saps-common-testing
 
   qc_coverage:
     repos:
-      this_repo:
+      saps-common:
         commands:
         - mvn -f pom.xml -B -DskipTests clean package
         - mvn -f pom.xml test
