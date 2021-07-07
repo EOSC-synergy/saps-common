@@ -5,7 +5,8 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     command: sleep 6000000
-    image: ufcgsaps/saps-common-sqaaas
+    image: eoscsynergyapps/saps-common
+    #image: ufcgsaps/saps-common-sqaaas
     volumes:
     - source: ./
       target: /sqaaas-build
